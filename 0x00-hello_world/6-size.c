@@ -1,9 +1,10 @@
 #include <stdio.h>
+
 /**
- * main - Entry point
- *
- * Return: 0 (Sucess)
- */
+* main - Entry point
+*
+* Return: 0 (Sucess)
+*/
 int main(void)
 {
 printf("size of a char: %d byte(s)\n",(unsigned long)sizeof(d));
