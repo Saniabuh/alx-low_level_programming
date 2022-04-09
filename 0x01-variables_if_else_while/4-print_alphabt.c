@@ -6,19 +6,17 @@
  * Return: Always 0 (success)
  */
 int main(void)
-	
 {
-char c;
-for (c = 'a'; c <= 'z'; c++)
-{
+	char ch = 'a';
 
-if (c! = 'e' && c!= 'q')
-      }
-putchar(c)
+	while (ch <= 'z')
+	{
+		if (ch != 'e' && ch != 'q')
+		{
+			putchar(ch);
+		}
+		ch++;
 	}
-}
-putchar('\n');
-
-return (0);
-
+	putchar('\n');
+	return (0);
 }
