@@ -6,17 +6,13 @@
  * Return: Always 0 (success)
  */
 int main(void)
-
 {
-int i;
-for (i = 48; i <= 57; i++)
-{
-putchar (i);
+	int n;
+
+	for (n = 48; < 57; n++)
+	{
+		putchar(n);
+	}
+	putchar('\n');
+	return (0);
 }
-
-putchar ('\n'),
-
-return (0);
-
-}
-
