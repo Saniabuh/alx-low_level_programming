@@ -6,23 +6,18 @@
  * Return: Always 0 (correct)
  */
 int main(void)
-
 {
-int number;
-for (number = 48; number <= 57; number++)
-{
-putchar(number);
+	int number;
 
-if (number == 57);
-{
-	break;
+	for (number = 48; number < 58; number++)
+	{
+		putchar(number);
+		if (number != 57)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+	}
+	putchar('\n');
+	return (0);
 }
-putchar(',');
-putchar(' ');
-}
-putchar ('\n');
-
-return (0);
-
-}
-
