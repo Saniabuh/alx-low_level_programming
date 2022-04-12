@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * add - prints add two number
- *
+ *@n: print int n
  * Return: Always 0.
  */
 void print_to_98(int n)
