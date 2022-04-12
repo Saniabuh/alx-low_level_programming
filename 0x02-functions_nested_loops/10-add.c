@@ -2,21 +2,12 @@
 #include <stdio.h>
 /**
  * add - prints add two number
- *@n: print int n
+ *@i: print int n
+ *@k: print in k
  * Return: Always 0.
  */
-void print_to_98(int n)
+int add(int i, int k)
 {
-if (n < 98)
-{
-for (n = n; n < 98; n++)
-printf("%d, ", n);
-printf("%d\n", 98);
+  return (i+k);
 }
-else
-{
-for (n = n; n > 98; n--)
-printf("%d, ", n);
-printf("%d\n", 98);
-}
-}
+ 
