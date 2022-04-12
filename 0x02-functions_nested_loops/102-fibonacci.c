@@ -1,10 +1,9 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
-* main - Prints first 50 Fibonacci numbers,starting with 1 and 2    
+*main - Prints first 50 Fibonacci numbers,starting with 1 and 2    
 *
-* Return: Always 0.
+*Return: Always 0.
 */
 int main(void)
 {
