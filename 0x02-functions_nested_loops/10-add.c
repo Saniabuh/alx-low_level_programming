@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * main - check the code
+ * add - prints add two number
  *
  * Return: Always 0.
  */
