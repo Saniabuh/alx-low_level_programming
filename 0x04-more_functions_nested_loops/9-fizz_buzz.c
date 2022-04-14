@@ -1,28 +1,33 @@
-#include "main.h"
-
+#include <stdio.h>
 /**
- * print_square - prints a square
- * @size: intiger agrument
- * Return: void
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
  */
-void print_square(int size)
+int main(void)
 {
-	if (size > 0)
+	int m;
+
+	for (m = 1 ; m < 100 ; m++)
 	{
-		int j = 0;
-
-		while (j < size)
+		if ((m % 3) == 0 && (m % 5) == 0)
 		{
-			int i;
-
-			for (i = 0; i < size; i++)
-			{
-				_putchar('#');
-			}
-			_putchar('\n');
-			j++;
+			printf("FizzBuzz ");
+		}
+		else if (m % 3 == 0)
+		{
+			printf("Fizz ");
+		}
+		else if (m % 5 == 0)
+		{
+			printf("Buzz ");
+		}
+		else
+		{
+		printf("%d ", m);
 		}
 	}
-	else
-		_putchar('\n');
+	printf("Buzz");
+	printf("\n");
+	return (0);
 }
