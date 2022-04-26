@@ -1,7 +1,12 @@
 #include "main.h"
 
+/**
+ * _strpbrk - prints buffer in hexa
+ * @s: buffer
+ * @accept: buffer2
+ *
  * Return: Nothing.
- 
+ */
 char *_strpbrk(char *s, char *accept)
 {
 	int i, j;
