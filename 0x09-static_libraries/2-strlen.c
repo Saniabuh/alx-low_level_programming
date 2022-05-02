@@ -1,18 +1,17 @@
 #include "main.h"
 
 /**
- * _strlen - returns the length of a string
+ * _strlen - Return the qty f bytes that a string has
+ * @s: The string
  *
- * @s: input string
- *
- * Return: length of a string
+ * Return: The long of the string as an integer number
  */
-
 int _strlen(char *s)
 {
-	int count = 0;
+	int q = 0;
 
-	while (*(s + ccount) != '\0')
-		count++;
-	return (count);
+	while (*(s + q) != '\0')
+		q++;
+
+	return (q);
 }
