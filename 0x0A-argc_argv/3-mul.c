@@ -1,39 +1,22 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
- * main - program that prints all arguments it receives
- * @argc: argument count
- * @argv: argunment vector
+ * main - multiplies two numbers
  *
- * Return: int
+ * @argc: number of command line arguments
+ * @argv: array that contains the program command line arguments
+ *
+ * Return: 0 (Success)
  */
 
 int main(int argc, char *argv[])
 {
-	int count, num1, num2, res;
-
-	count = num1 = num2 = res = 0;
-	if (argc > 0)
+	if (argc != 3)
 	{
-		while (count < argc)
-		{
-			if (argc == 3)
-			{
-				if (count == 1)
-					num1 = atoi(argv[count]);
-				else if (count == 2)
-					num2 = atoi(argv[count]);
-			}
-			else
-			{
-				printf("Error\n");
-				return (1);
-			}
-			res = (num1 * num2);
-			count++;
-		}
-		printf("%d\n", res);
+		printf("Error\n");
+		return (1);
 	}
+	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
 	return (0);
 }
