@@ -1,21 +1,16 @@
 #include "main.h"
 
 /**
- * *_memcpy - copies memory area
- * @dest: destination memory area
- * @src: memory area to copy from
- * @n: number of bytes to copy
- *
- * Return: pointer to dest
+ * _isdigit - function that checks whether a number is a digit
+ * @c: function argument
+ * Return: 1 if true 0 if false
  */
-char *_memcpy(char *dest, char *src, unsigned int n)
+
+int _isdigit(int c)
 {
-	unsigned int i;
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 
-	for (i = 0; i < n; i++)
-	{
-		dest[i] = src[i];
-	}
-
-	return (dest);
 }
