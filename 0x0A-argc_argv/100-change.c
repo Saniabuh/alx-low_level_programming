@@ -1,51 +1,42 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 /**
- * main - prints buffer in hexa
- * @argc: he number of command line arguments
- * @argv: An array containing the program command line arguments.
+ * main - prints the minimum number of coins to make change for an amount
+ * of money
  *
- * Return: Nothing.
+ * @argc: number of command line arguments
+ * @argv: array that contains the program command line arguments
+ *
+ * Return: 0 (Success)
  */
+
 int main(int argc, char *argv[])
 {
-	int j = 0, i = 1, coins, change = 0, a;
-	int cents[5] = {25, 10, 5, 2, 1};
+	int cents, ncoins = 0;
 
-	if (argc == 2)
-	{
-		for (j = 0; argv[i][j] != '\0'; j++)
-		{
-			if (argv[i][j] == '-')
-			{
-				printf("0\n");
-				return (0);
-			}
-			if (!(isdigit(argv[i][j])))
-			{
-				printf("Error\n");
-				return (1);
-			}
-		}
-		coins = atoi(argv[i]);
-		for (a = 0; a < 5; a++)
-		{
-
-			while (coins >= cents[a])
-			{
-				coins -= cents[a];
-				change += 1;
-			}
-		}
-		printf("%d\n", change);
-	}
-	else
+	if (argc == 1 || argc > 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+
+	cents = atoi(argv[1]);
+
+	while (cents > 0)
+	{
+		if (cents >= 25)
+			cents -= 25;
+		else if (cents >= 10)
+			cents -= 10;
+		else if (cents >= 5)
+			cents -= 5;
+		else if (cents >= 2)
+			cents -= 2;
+		else if (cents >= 1)
+			cents -= 1;
+		ncoins += 1;
+	}
+	printf("%d\n", ncoins);
 	return (0);
 }
