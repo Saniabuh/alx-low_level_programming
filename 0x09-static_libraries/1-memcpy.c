@@ -1,16 +1,19 @@
 #include "main.h"
 
 /**
- * _isdigit - function that checks whether a number is a digit
- * @c: function argument
- * Return: 1 if true 0 if false
+ * _memcpy - prints buffer in hexa
+ * @src: buffer
+ * @dest: buffer2
+ * @n: size
+ * Return: Nothing.
  */
-
-int _isdigit(int c)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
+	unsigned int i;
 
+	for (i = 0; i < n; i++)
+	{
+		*(dest + i) = *(src + i);
+	}
+	return (dest);
 }
