@@ -1,4 +1,3 @@
-#include "main.h"                                                                                                                                                       
 #include <unistd.h>
 
 /**                                                                                                                                                                     
@@ -7,7 +6,6 @@
  *                                                                                                                                                                      
  * Return: on Sucess 1                                                                                                                                                  
  * on error,-1 is returned,and errno is set appropriately
-Okey Ifeanyi9:08 PM
 */                                                                                                                                                                     
 int _putchar(char c)                                                                                                                                                    
 {                                                                                                                                                                  
