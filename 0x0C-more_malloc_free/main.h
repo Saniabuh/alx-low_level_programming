@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 fndef _MAIN_H
+=======
+#ifndef _MAIN_H
+>>>>>>> 6f3ccb06bd8ff158f622cbe47d24724aebdd9c2f
 #define _MAIN_H
 
 int _putchar(char c);
