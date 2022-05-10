@@ -1,6 +1,7 @@
-#ifndef MACRO_H
-#define MACRO_H
-
+#ifndef FILE_MACRO
+#define FILE_MACRO
 #define SIZE 1024
+
+
 
 #endif
