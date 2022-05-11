@@ -11,7 +11,7 @@ int _atoi_digit(char x)
 {
 	unsigned int res;
 
-	if (x < '9' && x > '0')
+	if (x <= '9' && x >= '0')
 		res = x - '0';
 	return (res);
 }
@@ -116,36 +116,44 @@ void print_array(char *a, int nb)
 
 int main(int argc, char *argv[])
 {
-	int i, c, len1, len2, lenres;
-	char E[6] = {'E', 'r', 'r', 'o', 'r', '\n'};
-	char *tabres;
+	char *s1, *s2;
+	int len1, len2, len, i, carry, digit1, digit2, *result, a = 0;
 
-	if (argc != 3 || _isNumber(argv[1]) == 1 || _isNumber(argv[2]) == 1)
+	s1 = argv[1], s2 = argv[2];
+	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
+		errors();
+	len1 = _strlen(s1);
+	len2 = _strlen(s2);
+	len = len1 + len2 + 1;
+	result = malloc(sizeof(int) * len);
+	if (!result)
+		return (1);
+	for (i = 0; i <= len1 + len2; i++)
+		result[i] = 0;
+	for (len1 = len1 - 1; len1 >= 0; len1--)
 	{
-		for (i = 0; i < 6; i++)
+		digit1 = s1[len1] - '0';
+		carry = 0;
+		for (len2 = _strlen(s2) - 1; len2 >= 0; len2--)
 		{
-			_putchar(E[i]);
+			digit2 = s2[len2] - '0';
+			carry += result[len1 + len2 + 1] + (digit1 * digit2);
+			result[len1 + len2 + 1] = carry % 10;
+			carry /= 10;
 		}
-		exit(98);
+		if (carry > 0)
+			result[len1 + len2 + 1] += carry;
 	}
-	for (len1 = 0; argv[1][len1]; len1++)
-	;
-	for (len2 = 0; argv[2][len2]; len2++)
-	;
-	lenres = len1 + len2;
-	tabres = _calloc(lenres, sizeof(int));
-	if (tabres == NULL)
+	for (i = 0; i < len - 1; i++)
 	{
-		free(tabres);
-		return (0);
+		if (result[i])
+			a = 1;
+		if (a)
+			_putchar(result[i] + '0');
 	}
-	for (i = len2 - 1, c = 0; i >= 0; i--)
-	{
-	tabres = mul_array(argv[1], len1, argv[2][i], tabres, (lenres - 1 - c));
-	c++;
-	}
-	print_array(tabres, lenres);
-	free(tabres);
-	exit(EXIT_SUCCESS);
+	if (!a)
+		_putchar('0');
+	_putchar('\n');
+	free(result);
 	return (0);
 }
