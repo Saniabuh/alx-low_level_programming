@@ -1,26 +1,28 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include "3-calc.h"
+#ifndef FILE_CALC
+#define FILE_CALC
 
 /**
- * main - main file
- * @argc: number of lines arguments
- * @argv: array of elements
- * Return: 0
+ * struct op - Structure op
+ * @op: operator
+ * @f: function
  */
 
-int main(int argc, char *argv[])
+typedef struct op
 {
-	int R;
+	char *op;
+	int (*f)(int a, int b);
+} op_t;
 
-	if (argc != 4)
-	{
-		printf("Error\n");
-		exit(98);
-	}
+int op_add(int a, int b);
 
-	R = (*get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3]));
-	printf("%d\n", R);
+int op_sub(int a, int b);
 
-	return (0);
-}
+int op_mul(int a, int b);
+
+int op_div(int a, int b);
+
+int op_mod(int a, int b);
+
+int (*get_op_func(char *s))(int, int);
+
+#endif
