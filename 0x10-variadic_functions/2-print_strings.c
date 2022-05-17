@@ -5,7 +5,7 @@
  * @separator: separator between strings
  * @n: number of arguments
  */
-void print_strings(const char *separator, const unsigned int n, ...)
+void print_strings(const char *sep, const unsigned int n, ...)
 {
 	unsigned int j;
 	char *str;
@@ -19,12 +19,12 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		str = va_arg(list, char *);
 		if (!str)
 			str = "(nil)";
-		if (!separator)
+		if (!sep)
 			printf("%s", str);
-		else if (separator && j == 0)
+		else if (sep && j == 0)
 			printf("%s", str);
 		else
-			printf("%s%s", separator, str);
+			printf("%s%s", sep, str);
 	}
 
 	printf("\n");
