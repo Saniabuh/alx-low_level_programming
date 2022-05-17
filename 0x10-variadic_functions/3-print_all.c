@@ -15,31 +15,31 @@ void print_all(const char * const format, ...)
 
 	if (format)
 	{
-		while (format[i])
+		while (format[j])
 		{
-			switch (format[i])
+			switch (format[j])
 			{
 				case 'c':
-					printf("%s%c", sep, va_arg(list, int));
+					printf("%s%c", seperator, va_arg(list, int));
 					break;
 				case 'i':
-					printf("%s%d", sep, va_arg(list, int));
+					printf("%s%d", seperator, va_arg(list, int));
 					break;
 				case 'f':
-					printf("%s%f", sep, va_arg(list, double));
+					printf("%s%f", seperator, va_arg(list, double));
 					break;
 				case 's':
 					str = va_arg(list, char *);
 					if (!str)
 						str = "(nil)";
-					printf("%s%s", sep, str);
+					printf("%s%s", seperator, str);
 					break;
 				default:
-				i++;
+				j++;
 					continue;
 			}
 			sep = ", ";
-			i++;
+			j++;
 		}
 	}
 
