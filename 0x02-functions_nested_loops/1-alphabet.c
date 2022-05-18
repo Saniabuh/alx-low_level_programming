@@ -18,3 +18,8 @@ _putchar(alphabet);
 _putchar('\n');
 
 }
+int main()
+{
+  print_alphabet();
+  return 0;
+}
