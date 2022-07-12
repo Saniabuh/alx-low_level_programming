@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#define EXIT_SUCCESS 1
 
 int _putchar(char c);
 int _islower(int c);
