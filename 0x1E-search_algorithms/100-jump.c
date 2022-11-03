@@ -1,59 +1,44 @@
 #include "search_algos.h"
-
-void print(int *array, size_t lo);
+#include <math.h>
 
 /**
- * jump_search - function to find a value in an array
- * using the jum search algorithm
- * @size: length of the array
- * @value: value to be searched for
- * @array: array where the value is to be searched
- * Return: value if found or -1 if array is null or value not found
+ * jump_search - searches for a value in an array of
+ * integers using the Jump search algorithm
+ *
+ * @array: input array
+ * @size: size of the array
+ * @value: value to search in
+ * Return: index of the number
  */
-
 int jump_search(int *array, size_t size, int value)
 {
-	size_t jump = sqrt(size);
-	size_t lo = 0;
-	size_t hi = jump;
-	size_t i;
+	int index, m, k, prev;
 
-	if (!array || size == 0)
+	if (array == NULL || size == 0)
 		return (-1);
-	print(array, lo);
-	while ((array[hi] < value) && (hi < size))
+
+	m = (int)sqrt((double)size);
+	k = 0;
+	prev = index = 0;
+
+	do {
+		printf("Value checked array[%d] = [%d]\n", index, array[index]);
+
+		if (array[index] == value)
+			return (index);
+		k++;
+		prev = index;
+		index = k * m;
+	} while (index < (int)size && array[index] < value);
+
+	printf("Value found between indexes [%d] and [%d]\n", prev, index);
+
+	for (; prev <= index && prev < (int)size; prev++)
 	{
-		print(array, hi);
-		lo = hi;
-		hi += jump;
-		if (hi > size - 1)
-		{
-			break;
-		}
+		printf("Value checked array[%d] = [%d]\n", prev, array[prev]);
+		if (array[prev] == value)
+			return (prev);
 	}
-	printf("Value found between indexes [%ld] and [%ld]\n", lo, hi);
-	for (i = lo; i <= hi && hi <= size - 1; i++)
-	{
-		print(array, i);
-		if (array[i] == value)
-		{
-			return (i);
-		}
-	}
-	print(array, lo);
+
 	return (-1);
-
-}
-
-/**
-* print - to print the array
-* @lo: lower bound of the array
-* @array: array to be searched
-* Return: Null
-*/
-
-void print(int *array, size_t lo)
-{
-
-	printf("Value checked array[%ld] = [%d]\n", lo, array[lo]);
 }
